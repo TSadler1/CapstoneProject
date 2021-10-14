@@ -17,7 +17,7 @@ It also includes a check-box list in which the user can select the type of puzzl
 to download the set of puzzles and one to download the solutions to said puzzles. A back button is present that will take the user back to the main webpage.
 <h3>style2.css</h3> This file contains the CSS code that accompanies the downloadpage.html file and stylizes and formats the download webpage.
 <h3>Purple Petals 2019(4).png</h3> This file is the image file that serves as a background to the webpages of the site.
-<h3>image(2).png</h3> This file contains the ER Diagram for the design of the word table within the MySQL Database.
+<h3>words ERD.png</h3> This file contains the ER Diagram for the design of the word table within the MySQL Database.
 <h3>main website page.png</h3> This file contains the design of the main webpage.
 <h3>download website page.png</h3> This file contains the design of the download webpage.
 
