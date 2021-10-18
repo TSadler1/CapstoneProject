@@ -32,8 +32,8 @@ to download the set of puzzles and one to download the solutions to said puzzles
 <h3>words ERD.png</h3> This file contains the ER Diagram for the design of the word table within the MySQL Database.
 <h3>main website page.png</h3> This file contains the design of the main webpage.
 <h3>download website page.png</h3> This file contains the design of the download webpage.
-<h3>words.mysql</h3> This file contains the MYSQL code for the "words" table.
-<h3>quotes.mysql</h3> This file contains the MYSQL code for the "quotes" table.
+<h3>words.sql</h3> This file contains the MYSQL code for the "words" table.
+<h3>quotes.sql</h3> This file contains the MYSQL code for the "quotes" table.
 
 
 
