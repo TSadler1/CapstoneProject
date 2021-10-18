@@ -22,6 +22,12 @@ to download the set of puzzles and one to download the solutions to said puzzles
 <h3>acrosticstyle.css</h3> This file contains the CSS code that accompnies the acrostic.html file. This code stylizes and formats the webpage.
 <h3>double.html</h3> This file contains the HTML code for the page that describes double puzzles.
 <h3>doublestyle.css</h3> This file contains the CSS code that accompnies the double.html file. This code stylizes and formats the webpage.
+<h3>quote.html</h3> This file contains the HTML code for the page that describes drop quote puzzles.
+<h3>quotestyle.css</h3> This file contains the CSS code that accompnies the quote.html file. This code stylizes and formats the webpage.
+<h3>wordsearch.html</h3> This file contains the HTML code for the page that describes word search puzzles.
+<h3>wordsearchstyle.css</h3> This file contains the CSS code that accompnies the wordsearch.html file. This code stylizes and formats the webpage.
+<h3>conjunction.html</h3> This file contains the HTML code for the page that describes conjunction junction puzzles.
+<h3>conjunctionstyle.css</h3> This file contains the CSS code that accompnies the conjunction.html file. This code stylizes and formats the webpage.
 <h3>Purple Petals 2019(4).png</h3> This file is the image file that serves as a background to the webpages of the site.
 <h3>words ERD.png</h3> This file contains the ER Diagram for the design of the word table within the MySQL Database.
 <h3>main website page.png</h3> This file contains the design of the main webpage.
