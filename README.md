@@ -15,7 +15,13 @@ It also includes a check-box list in which the user can select the type of puzzl
 <h3>style.css</h3> This file contains the CSS code that accompanies the index.html file and stylizes and formats the main webpage.
 <h3>downloadpage.html</h3> This file contains the HTML code for the webpage that a user is taken to when the select to generate puzzles. This webpage contains two mian buttons, one
 to download the set of puzzles and one to download the solutions to said puzzles. A back button is present that will take the user back to the main webpage.
-<h3>style2.css</h3> This file contains the CSS code that accompanies the downloadpage.html file and stylizes and formats the download webpage.
+<h3>downloadstyle.css</h3> This file contains the CSS code that accompanies the downloadpage.html file, and stylizes and formats the download webpage.
+<h3>about.html</h3> This file contains the HTML code for the about page.
+<h3>aboutstyle.css</h3> This file contains the CSS code that accompnies the about.html file. This code stylizes and formats the webpage.
+<h3>acrostic.html</h3> This file contains the HTML code for the page that describes acrostic puzzles.
+<h3>acrosticstyle.css</h3> This file contains the CSS code that accompnies the acrostic.html file. This code stylizes and formats the webpage.
+<h3>double.html</h3> This file contains the HTML code for the page that describes double puzzles.
+<h3>doublestyle.css</h3> This file contains the CSS code that accompnies the double.html file. This code stylizes and formats the webpage.
 <h3>Purple Petals 2019(4).png</h3> This file is the image file that serves as a background to the webpages of the site.
 <h3>words ERD.png</h3> This file contains the ER Diagram for the design of the word table within the MySQL Database.
 <h3>main website page.png</h3> This file contains the design of the main webpage.
