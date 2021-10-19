@@ -28,12 +28,12 @@ to download the set of puzzles and one to download the solutions to said puzzles
 <h3>wordsearchstyle.css</h3> This file contains the CSS code that accompnies the wordsearch.html file. This code stylizes and formats the webpage.
 <h3>conjunction.html</h3> This file contains the HTML code for the page that describes conjunction junction puzzles.
 <h3>conjunctionstyle.css</h3> This file contains the CSS code that accompnies the conjunction.html file. This code stylizes and formats the webpage.
-<h3>Purple Petals 2019(4).png</h3> This file is the image file that serves as a background to the webpages of the site.
-<h3>words ERD.png</h3> This file contains the ER Diagram for the design of the word table within the MySQL Database.
+<h3>background.png</h3> This file is the image file that serves as a background to the webpages of the site.
+<h3>words ERD.png</h3> This file contains the ER Diagram for the design of the words table within the MySQL Database.
+<h3>quotes ERD.png</h3> This file contains the ER Diagram for the design of the quotes table within the MySQL Database.
 <h3>main website page.png</h3> This file contains the design of the main webpage.
 <h3>download website page.png</h3> This file contains the design of the download webpage.
-<h3>words.sql</h3> This file contains the MYSQL code for the "words" table.
-<h3>quotes.sql</h3> This file contains the MYSQL code for the "quotes" table.
+<h3>dictionary.sql</h3> This file contains the MYSQL code for the dictionary database and its words and quotes tables.
 <h3>doublepuzzletest.html</h3> This file contains the JavaScript code for the basic implementation of the Double Puzzle type.
 
 
