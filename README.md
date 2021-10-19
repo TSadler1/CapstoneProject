@@ -39,11 +39,11 @@ to download the set of puzzles and one to download the solutions to said puzzles
 
 <h1> Implementation </h1>
 
-Create an Amazon Web Services account: https://aws.amazon.com/free/?trk=ps_a131L0000085EJuQAM&trkCampaign=acq_paid_search_brand&sc_channel=ps&sc_campaign=acquisition_US&sc_publisher=google&sc_category=core-main&sc_country=US&sc_geo=NAMER&sc_outcome=acq&sc_detail=amazon%20web%20services&sc_content=Brand_amazon_web_services_e&sc_segment=423740514695&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Core-Main|Core|US|EN|Text&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&ef_id=CjwKCAjwh5qLBhALEiwAioods1jPOAZd0cz9TFRrLZo3J0C-mOG8hkZwf7Wx5WiVBHGxdmG_Ph3oThoCtbAQAvD_BwE:G:s&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
+<h6>1: Create an Amazon Web Services account: https://aws.amazon.com/free/?trk=ps_a131L0000085EJuQAM&trkCampaign=acq_paid_search_brand&sc_channel=ps&sc_campaign=acquisition_US&sc_publisher=google&sc_category=core-main&sc_country=US&sc_geo=NAMER&sc_outcome=acq&sc_detail=amazon%20web%20services&sc_content=Brand_amazon_web_services_e&sc_segment=423740514695&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Core-Main|Core|US|EN|Text&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&ef_id=CjwKCAjwh5qLBhALEiwAioods1jPOAZd0cz9TFRrLZo3J0C-mOG8hkZwf7Wx5WiVBHGxdmG_Ph3oThoCtbAQAvD_BwE:G:s&s_kwcid=AL!4422!3!423740514695!e!!g!!amazon%20web%20services&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all </h6>
 
-Create an EC2 Instance
-Download XAMPP onto Windows Server
-Download folder with files into HTDOCS folder
-Label folder with files "dashboard" and rename original dashboard folder
-Create MySQL database and tables
-(video tutorial (https://www.youtube.com/watch?v=QtdbGIvLJKo))
+<h6>2: Create an EC2 Instance</h6>
+<h6>3: Download XAMPP onto Windows Server</h6>
+<h6>4: Download folder with files into HTDOCS folder</h6>
+<h6>5: Label folder with files "dashboard" and rename original dashboard folder</h6>
+<h6>6: Create MySQL database and tables</h6>
+<h6>(video tutorial (https://www.youtube.com/watch?v=QtdbGIvLJKo))</h6>
