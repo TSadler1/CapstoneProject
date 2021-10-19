@@ -34,7 +34,7 @@ to download the set of puzzles and one to download the solutions to said puzzles
 <h3>download website page.png</h3> This file contains the design of the download webpage.
 <h3>words.sql</h3> This file contains the MYSQL code for the "words" table.
 <h3>quotes.sql</h3> This file contains the MYSQL code for the "quotes" table.
-
+<h3>doublepuzzletest.html</h3> This file contains the JavaScript code for the basic implementation of the Double Puzzle type.
 
 
 <h1> Implementation </h1>
