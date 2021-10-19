@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2> Double Puzzle Test </h2>
+
+<p> Input Word = Test</p>
+
+<p id="demo"></p>
+
+<script>
+var word = "TEST";
+const values = ["TIGER", "WEBSITE", "ICECREAM", "TYRANT", "EVENING", "SWORD", "ICELAND", "EDGE", "BRAIN", "TASTE", "ANGER", "DRAGON", "EYE", "ITEM", "TAIWAN", "TOPIC","TOGA","TANGERINE", "TEACUP", "SOVEREIGN", "SAGE"];
+const words = [];
+//values.sort(() => (Math.random() > .5) ? 1 : -1);
+for(let n = 0; n < word.length; n++){
+	var k = Math.floor(Math.random() * values.length);
+	for(let i = 0; i < values.length; i++){
+		var check = values[k];
+        k++;
+        if(k >= values.length){
+        	k = 0;
+        }
+    	if(check.charAt(0) == word.charAt(n)){
+  
+        	if(!(words.includes(check))){
+    			words.push(check);
+              break;
+            
+        	}       
+    }
+}
+}
+if(words.length != word.length){
+document.getElementById("demo").innerHTML = "ERROR CANNOT GENERATE PUZZLE";
+}
+else{
+var list = "";
+var solution = "";
+for(let n = 0; n < words.length; n++){
+	var text = words[n];
+	var scramble = "";
+	var temp = text;
+	var temp2 = temp;
+	var blanks = "";
+	for(let i = 0; i < text.length; i++){
+		temp = temp2;
+		var number = Math.floor(Math.random() * temp.length);
+		scramble += temp.charAt(number);
+		temp2 = temp.substring(0, number) + temp.substring(number+1);
+		blanks += "__ ";
+	}
+
+	if(scramble == text){
+		n = n -1;
+	}
+	else{
+		list += scramble + "<br> " + blanks + "<br>" + "<br>";
+		solution += scramble + "<br>"  + text + "<br>" + "<br>";
+	}
+
+
+}
+document.getElementById("demo").innerHTML = list +"<br>" + "<br>" + "Solutions:" + "<br>" + "<br>" + solution + "<br>" + "WORD: " + word;
+}
+</script>
+
+</body>
+</html> 
