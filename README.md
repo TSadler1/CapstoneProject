@@ -33,6 +33,7 @@ to download the set of puzzles and one to download the solutions to said puzzles
 <h3>quotes ERD.png</h3> This file contains the ER Diagram for the design of the quotes table within the MySQL Database.
 <h3>main website page.png</h3> This file contains the design of the main webpage.
 <h3>download website page.png</h3> This file contains the design of the download webpage.
+<h3>info website page.png</h3> This file contains the general design of the about and info webpages on the site.
 <h3>dictionary.sql</h3> This file contains the MYSQL code for the dictionary database and its words and quotes tables.
 <h3>doublepuzzletest.html</h3> This file contains the JavaScript code for the basic implementation of the Double Puzzle type.
 
