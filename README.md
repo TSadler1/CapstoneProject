@@ -43,11 +43,7 @@ Create an Amazon Web Services account: https://aws.amazon.com/free/?trk=ps_a131L
 
 Create an EC2 Instance
 Download XAMPP onto Windows Server
-Download files into HTDOCS folder
+Download folder with files into HTDOCS folder
 Label folder with files "dashboard" and rename original dashboard folder
-Create MySQL database
-Create MySQL table
+Create MySQL database and tables
 (video tutorial (https://www.youtube.com/watch?v=QtdbGIvLJKo))
-
-<h3>References utilized for the creation of this project:</h3>
-How to Host a Dynamic Website on AWS EC2 Instance || How to Deploy a PHP Website on AWS EC2 Instance: https://www.youtube.com/watch?v=QtdbGIvLJKo
