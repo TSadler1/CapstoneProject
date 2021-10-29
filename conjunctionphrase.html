@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Conjunction Junction</h2>
+<p>Conjunctions are AND, BUT, and OR.</p>
+<p>WORD = Test</p>
+<p id="demo"></p>
+
+<script>
+var word = "TEST";
+const values = ["BOW AND ARROW", "BELIEVEIT OR NOT", "SILENT BUT DEADLY", "TIFFANY BUT CO", "SAFE AND SOUND", "EVIL AND GOOD", "TALL OR SHORT"];
+const hintList = [];
+const words = [];
+for(let n = 0; n < word.length; n++){
+	var k = Math.floor(Math.random() * values.length);
+	for(let i = 0; i < values.length; i++){
+		var check = values[k];
+        k++;
+        if(k >= values.length){
+        	k = 0;
+        }
+    	if(check.charAt(0) == word.charAt(n)){
+        	if(!(words.includes(check))){
+    		words.push(check);
+            break;
+        }       
+    }
+}
+}
+if(words.length != word.length){
+document.getElementById("demo").innerHTML = "ERROR CANNOT GENERATE PUZZLE";
+}
+else{
+var hints = "";
+var puzzle = "";
+var hintEnd = "";
+
+for(var val = 0; val < words.length; val++){
+	hints = "";
+	var str = words[val];
+  //  const wordsList = str.split(" ");
+    var wordsList = str.split(" AND ");
+    var con = " AND ";
+    if(wordsList.length < 2){
+    	con = "OR";
+       	wordsList = str.split(" OR ");
+    }
+    if(wordsList.length < 2){
+    	con = " BUT ";
+       	wordsList = str.split(" BUT ");
+    }
+    var word = wordsList[0];
+    puzzle += word.replace(word.charAt(0), "__");
+    puzzle += "&emsp; &emsp;________ &emsp;&emsp;__ _____________";
+    word = wordsList[1];
+    hints += word.replace(word.charAt(0), "__");
+    hints += "&emsp;&emsp; <br>";
+    hintEnd += hints;
+    puzzle += "<br>"; 
+}
+var solution = "";
+for(var word = 0; word < words.length; word++){
+	solution += words[word] + "<br>";
+}
+
+//for(var hint = 0; hint < hintList.length;hint++){
+//hintEnd+= hintList[hint];
+//}
+var out = 1;
+//hintList.sort(() => (Math.random() > .5) ? 1 : -1);
+document.getElementById("demo").innerHTML = puzzle + "<br>" +"<br>" + hintEnd + "<br>" + "<br>" + "SOLUTIONS:" + "<br>" + solution;
+}
+</script>
+
+</body>
+</html> 
