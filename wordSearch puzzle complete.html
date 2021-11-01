@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First Web Page</h2>
+<p>My First Paragraph.</p>
+
+<p id="demo"></p>
+
+<script>
+var hiddenWord = "TEST";
+const values = [ "TAIL", "EAT", "SAD", "TALK","ME", "NO", "RAGE", "HUG"];
+var grid = new Array(5);
+
+for (var i = 0; i < grid.length; i++) {
+  grid[i] = new Array(5).fill("");
+}
+
+const words = [];
+
+for(var letter = 0; letter < hiddenWord.length; letter++){
+	
+	var k = Math.floor(Math.random() * values.length);
+	for(let i = 0; i < values.length; i++){
+		var check = values[k];
+        k++;
+        if(k >= values.length){
+        	k = 0;
+        }
+        
+        if(check.charAt(0) == hiddenWord.charAt(letter)){
+  
+        	if(!(words.includes(check))){
+    			words.push(check);
+              break;
+            
+        	}       
+    	}
+    }
+}
+
+var nope = 0;
+if(words.length != hiddenWord.length){
+	document.getElementById("demo").innerHTML = "ERROR CANNOT GENERATE PUZZLE";
+}
+
+else{
+for(var val = 0; val < words.length; val++){
+	var reverse = Math.floor(Math.random() * 2);
+	var direction = Math.floor(Math.random() * 3);
+	var word = words[val];
+    var fit = 0;
+    var dirCount = 0;
+    while(dirCount < 2 && fit == 0){
+    direction++;
+    if(direction >= 3){
+    	direction = 0;
+    }
+    if(reverse == 1){
+    	var temp = "";
+    	for(var letter = word.length-1; letter >= 0; letter--){
+        	temp += word[letter];
+        }
+        word = temp;
+        reverse = 0;
+    }
+    else{
+    	reverse = 1;
+    }
+  
+    if(direction == 2 && dirCount < 2 && fit == 0){
+    	dirCount++;
+    	var currentCol = Math.floor(Math.random() * grid.length);
+        for(var col = 0; col < grid.length; col++){
+        		currentCol++;
+        		if(currentCol >= grid.length){
+        			currentCol = 0;
+        		}
+                var currentRow = Math.floor(Math.random() * grid.length);
+                for(var row = 0; row < grid[0].length; row++){
+                	currentRow++;
+            		if(currentRow >= grid[currentCol].length){
+             			currentRow = 0;
+            		}
+                
+                    if((grid.length - currentCol) >= word.length && (grid[currentCol].length - currentRow >= word.length)){
+                    	for(var letter = 0; letter < word.length; letter++){
+                        	if(word.charAt(letter) == grid[currentCol+letter][currentRow+letter] 						|| grid[currentCol+letter][currentRow+letter] == ""){
+                            
+                            	fit = 1;
+                            }
+                            else{
+                            	fit = 0;
+                                break;
+                            }
+                        
+                        }
+                        if(fit == 1){
+                        	for(var letter = 0; letter < word.length; letter++){
+                            grid[currentCol+letter][currentRow+letter] = word.charAt(letter);
+                            
+                            }
+                        }
+                        
+                    
+                    }
+                    if(fit == 1){
+            			break;
+            		}  
+                  
+                }
+                 if(fit == 1){
+            		break;
+            	}  
+         
+         }
+    	
+    
+	}
+
+    
+    if(direction == 1  && dirCount < 2 && fit == 0){
+    	dirCount++;
+    	var currentRow = Math.floor(Math.random() * grid.length);
+        for(var row = 0; row < grid[0].length; row++){
+        	currentRow++;
+            if(currentRow >= grid[0].length){
+             currentRow = 0;
+            }
+        	var currentCol = Math.floor(Math.random() * grid.length);
+            for(var col = 0; col < grid.length; col++){
+            	currentCol++;
+        		if(currentCol >= grid.length){
+        			currentCol = 0;
+        		}
+                if(grid.length - currentCol >= word.length){
+                	for(var letter = 0; letter < word.length; letter++){
+                    	if(word.charAt(letter) == grid[currentCol+letter][currentRow] 						|| grid[currentCol+letter][currentRow] == ""){
+                			fit = 1;
+                		}
+                		else{
+                			fit = 0;
+                    		break;
+                		}
+                    }
+                    if(fit == 1){
+                		for(var letter = 0; letter < word.length; letter++){
+                    		grid[currentCol+letter][currentRow] = word.charAt(letter);
+            			}
+                	}
+                
+                }
+                if(fit == 1){
+            		break;
+            	}   
+            }
+            if(fit == 1){
+            	break;
+            }
+        }
+    
+    }
+    
+    if(direction == 0 && dirCount < 2 && fit == 0){
+    	dirCount++;
+    var currentCol = Math.floor(Math.random() * grid.length);
+	for(var col = 0; col < grid.length; col++){
+    	currentCol++;
+        if(currentCol >= grid.length){
+        	currentCol = 0;
+        }
+    	var currentRow = Math.floor(Math.random() * grid[currentCol].length);
+    	for(var row = 0; row < grid[currentCol].length; row++){
+        	currentRow++;
+            if(currentRow >= grid[currentCol].length){
+             currentRow = 0;
+            }
+        	if(grid[currentCol].length - currentRow >= word.length){
+        		for(var letter = 0; letter < word.length; letter++){
+            		if(word.charAt(letter) == grid[currentCol][currentRow+letter] || 						grid[currentCol][currentRow+letter] == ""){
+                		fit = 1;
+                	}
+                	else{
+                		fit = 0;
+                    	break;
+                	}
+            	}
+                if(fit == 1){
+                	for(var letter = 0; letter < word.length; letter++){
+                    	grid[currentCol][currentRow+letter] = word.charAt(letter);
+            		
+            		}
+                }
+            }
+            if(fit == 1){
+            	break;
+            }
+        }
+        if(fit == 1){
+        	break;
+        }
+
+	}}
+    if(dirCount == 2 && fit ==0){
+    	nope = 1;
+    }}
+}
+if(nope == 1){
+document.getElementById("demo").innerHTML = "ERROR CANNOT GENERATE PUZZLE";
+
+}
+else{
+var out = "";
+for (var i = 0; i < grid.length; i++) {
+  for(var n = 0; n < (grid[i]).length; n++){
+  			if(grid[i][n] == ""){
+            	out+= " " + String.fromCharCode(65 + Math.floor(Math.random() * 26)) + " ";
+                
+            }
+            else{
+            out+= "|";
+        	out += grid[i][n];
+            out+= "|";
+            }
+            out+= " ";
+      
+  }
+  out += "<br>";
+}
+
+
+document.getElementById("demo").innerHTML = out;
+}
+}
+</script>
+
+</body>
+</html> 

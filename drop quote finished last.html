@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p class class="doNotShow">
+<p id="puzzles"></p>
+<p id="solution"></p>
+</p>
+
+<script type="text/javascript"> 
+var sentence = "Test Test";
+</script>
+
+<script type="text/javascript"> 
+var buttons = "1";
+</script>
+
+<script type="text/javascript">
+var error = 0;
+var endSolution = "";
+var endPuzzles = "";
+ function dropQuote(wordGiven) {
+var word = "TEST";
+const values = ["TE", "TO BE OR NOT TO BE THAT IS THE QUESTION",  "POTATO"];
+const words = [""];
+var found = 0;
+var loc = new Array(word.length);
+for(var phrase = 0; phrase < values.length; phrase++){
+ 
+
+    var locLet = 0;
+    found = 0;
+    for(var wordLet = 0; wordLet < word.length; wordLet++){
+    var k = Math.floor(Math.random() * values[phrase].length);
+	for(var letter = 0; letter < values[phrase].length; letter++){
+    	k++;
+    	if(k >= values[phrase].length){
+        	k = 0;
+        }
+    	if(values[phrase].charAt(k) == word.charAt(wordLet)){
+        	loc[locLet] = k;
+            locLet++;
+       
+           found++;
+           break;
+        }
+        
+       
+    }
+    }
+    if(found == word.length){
+    words[0] = values[phrase];
+ 		break;   
+	}
+    
+}
+if(found != word.length){
+document.getElementById("demo").innerHTML = "ERROR CANNOT GENERATE PUZZLE";
+error = 1;
+}
+
+else{
+var grid;
+
+
+for(var val = 0; val < words.length; val++){
+	hints = "";
+	var str = words[val];
+    var num = words[val].length;
+    var col = Math.ceil(num/10);
+    grid = new Array(col);
+	for (var i = 0; i < grid.length; i++) {
+  		grid[i] = new Array(10).fill("");
+	}
+    const wordsList = str.split(" ");
+ 	for(var word = 0; word < wordsList.length; word++){
+    	var temp = wordsList[word] + "%";
+    	wordsList[word] = temp;
+    	letter = 0;
+    	for(var col = 0; col < grid.length; col++){
+        	for(var row = 0; row < grid[0].length; row++){
+            	
+            	if(grid[col][row] == ""){
+            	grid[col][row] = wordsList[word].charAt(letter);
+                letter++;
+                if(letter > wordsList[word].length){
+                	if(col >= grid.length){
+                    	col = 0;
+                    }
+                    if(row >= grid[0].length){
+                    	row = 0;
+                    }
+                   
+                	break;
+                }}
+            }
+            if(letter >= wordsList[word].length){
+                	break;
+                }
+        }
+        
+    }
+}
+var solution = "";
+var grid2 = new Array(10);
+	for (var i = 0; i < grid2.length; i++) {
+  		grid2[i] = new Array(grid.length).fill("_");
+	}
+
+for(var col = 0; col < grid.length; col++){
+	for(var row = 0; row < grid[0].length; row++){
+    	if(grid[col][row] != "%"){
+        	grid2[row][col] = grid[col][row];
+    	}
+    }
+
+    
+}
+
+
+for(var col = 0; col < grid.length; col++){
+	for(var row = 0; row < grid[0].length; row++){
+     	if(grid[col][row] == "%"){
+         solution += "■";
+        }
+        else{
+    	solution += grid[col][row];
+        }
+    
+    }
+    solution += "<br>";
+
+}
+
+
+var question = "";
+for(var col = 0; col < grid.length; col++){
+	for(var row = 0; row < grid[0].length; row++){
+      	if(grid[col][row] != "%"){
+    	question += " _ ";
+        }
+        else{
+        question += "■";
+        }
+    
+    }
+    question += "<br>";
+
+}
+
+
+for(var row = 0; row < grid2.length; row++){
+	var count = 0;
+	var k = Math.floor(Math.random() * grid2[0].length);
+	for(var col = 0; col < grid2[0].length; col++){
+    	k++;
+        if(k >= grid2[0].length){
+        	k = 0;
+        }
+    	grid[col][row] = " "+ grid2[row][k] +" ";
+        if(grid[col][row] == " _ "){
+        	var temp = grid[count][row];
+            grid[col][row] = temp;
+            grid[count][row] = " _ ";
+            count++;
+        }
+    }
+
+}
+
+var hint = "";
+for(var col = 0; col < grid.length; col++){
+
+for(var row = 0; row < grid[0].length; row++){
+
+	hint+=grid[col][row];
+
+}
+   hint+= "<br>";
+}
+
+
+
+
+
+
+	
+ endPuzzles += "<br> <br> Drop Quote Puzzle: <br> <br>" + "<br>" + hint + question + "<br>" + "<br> The letters of the hidden word in order (including spaces) are in the following positions:" + loc + "<br> Solution: <br>" + solution + "<br> Hidden Word:" + wordGiven;
+ endSolution += "<br> <br> Drop Quote Solution <br> <br>" +  solution;
+}
+
+
+ 
+ }
+
+
+
+ function conjunctionJunction(wordGiven) {
+var word = wordGiven.toUpperCase();
+const values = ["BOW AND ARROW", "BELIEVEIT OR NOT", "SILENT BUT DEADLY", "TIFFANY BUT CO", "SAFE AND SOUND", "EVIL AND GOOD", "TALL OR SHORT"];
+const hintList = [];
+const words = [];
+for(let n = 0; n < word.length; n++){
+	var k = Math.floor(Math.random() * values.length);
+	for(let i = 0; i < values.length; i++){
+		var check = values[k];
+        k++;
+        if(k >= values.length){
+        	k = 0;
+        }
+    	if(check.charAt(0) == word.charAt(n)){
+        	if(!(words.includes(check))){
+    		words.push(check);
+            break;
+        }       
+    }
+}
+}
+if(words.length != word.length){
+document.getElementById("demo").innerHTML = "ERROR CANNOT GENERATE PUZZLE";
+error = 1;
+}
+else{
+var hints = "";
+var puzzle = "";
+var hintEnd = "";
+
+for(var val = 0; val < words.length; val++){
+	hints = "";
+	var str = words[val];
+    var wordsList = str.split(" AND ");
+    var con = " AND ";
+    if(wordsList.length < 2){
+    	con = "OR";
+       	wordsList = str.split(" OR ");
+    }
+    if(wordsList.length < 2){
+    	con = " BUT ";
+       	wordsList = str.split(" BUT ");
+    }
+    var word = wordsList[0];
+    puzzle += word.replace(word.charAt(0), "__");
+    puzzle += "&emsp; &emsp;________ &emsp;&emsp;__ _____________";
+    word = wordsList[1];
+    hints += word.replace(word.charAt(0), "__");
+    hints += "&emsp;&emsp; <br>";
+    hintEnd += hints;
+    puzzle += "<br>"; 
+}
+var solution = "";
+for(var word = 0; word < words.length; word++){
+	solution += words[word] + "<br>";
+}
+
+
+endPuzzles = "Conjunction Junction Puzzle: <br> <br>" + puzzle + "<br>" +"<br>" + hintEnd + "<br>" + "<br>" + "SOLUTIONS:" + "<br>" + solution;
+endSolution = "Conjunction Junction Solution <br>" + solution;
+}
+}
+   
+    
+      function printPuzzle() {
+      document.getElementById("puzzles").innerHTML = endPuzzles+ "<br>";
+      var printContents = document.getElementById("puzzles").innerHTML;
+        w=window.open();
+        w.document.write(printContents);
+        w.print();
+        w.close();
+    
+    }
+    
+    function printSolution() {
+    document.getElementById("solution").innerHTML = endSolution + "<br>";
+      var printContents = document.getElementById("solution").innerHTML;
+        w=window.open();
+        w.document.write(printContents);
+        w.print();
+        w.close();
+    
+    }
+	
+    const listSentence = sentence.split(" ");
+    for(var wordSentence = 0; wordSentence < listSentence.length; 		wordSentence++){
+    conjunctionJunction(listSentence[wordSentence]);
+    }
+    dropQuote(listSentence[1]);
+    
+    if(error == 1){
+    	alert("Error: Could not generate puzzle set. Please try again.");
+    }
+    
+</script>
+
+	<head>
+
+		<title>Butterfly Puzzles - Download</title>
+		<link rel="stylesheet" href="downloadstyle.css"
+		type="text/css">
+	</head>
+	<body>
+	<button class="about" onclick="location.href='index.html'" type="button">
+				Home
+	</button>	
+	<button class="about" onclick="location.href='about.html'" type="button">
+				About
+	</button>
+	<button class="about" onclick="location.href='acrostic.html'" type="button">
+				Acrostic Puzzle
+	</button>
+	<button class="about" onclick="location.href='double.html'" type="button">
+				Double Puzzle
+	</button>
+	<button class="about" onclick="location.href='quote.html'" type="button">
+				Drop Quote Puzzle
+	</button>
+	<button class="about" onclick="location.href='wordsearch.html'" type="button">
+				Word Search Puzzle
+	</button>
+	<button class="about" onclick="location.href='conjunction.html'" type="button">
+				Conjunction Junction Puzzle
+	</button>
+		<div class="heading">
+			<span class="title1">Butterfly Puzzles</span>
+			<span class="title2">Chain Puzzle Generating Website</span>
+		
+
+			
+<br>
+ <form>
+
+  <input type="button" onclick="printPuzzle()" value="Download Puzzles"/>
+</form>
+<p id="demo"></p>
+</div>
+
+
+  <input type="button" onclick="printSolution()" value="Download Solution"/>
+</form>
+<p id="demo2"></p>
+</div>
+
+   
+<button class="create" onclick="location.href='index.html'" type="button">
+			Back	
+</button>
+
+</div>
+
+
+		
+</html>
+
+</body>
+</html> 
